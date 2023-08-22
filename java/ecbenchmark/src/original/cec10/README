@@ -1,0 +1,26 @@
+IEEE CEC benchmark functions:
+In IEEE Conference on Evolutionary Computation, every now and then, benchmark 
+functions are created to evaluate the performance of evolutionary algorithms. 
+The source code of the CEC'2010 benchmark functions is available for free at 
+[http://nical.ustc.edu.cn/cec10ss.php]*. However, I found it too difficult to 
+understand their code, so I decided to re-engineer them in order to provide more
+ readability regardless of the efficiency. Accidentally, my implementation 
+appears to be slightly more efficient  (based on a few results from the NetBeans 
+Java Profiler).
+
+The code in this folder and subfolder comes from:
+
+*K. Tang, Xiaodong Li, P. N. Suganthan, Z. Yang and T. Weise, 
+"Benchmark Functions for the CEC'2010 Special Session and Competition on 
+Large Scale Global Optimization," Technical Report, Nature Inspired Computation 
+and Applications Laboratory, USTC, China, http://nical.ustc.edu.cn/cec10ss.php
+
+CHANGELOG:
+    * Added "package original.cec10;" at the beginning of each file.
+    * Added public visibility to class Kernel.java (had package visibility).
+    * Added public visibility to methods with package visibility in Kernel.java.
+    * Added public visibility to Defaults class and static variables (had package visibility).
+    * Removed "final" from property Defaults.DEFAULT_DIM.
+    * Function.java implements ecbenchmark.core.Function.
+    * Renamed method "compute" from Function.java (and all descendants) to "f" in 
+        order to satisfy the implementation of ecbenchmark.core.Function.
